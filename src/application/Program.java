@@ -17,7 +17,7 @@ public class Program {
 		try {
 			conn = DB.getConnection();
 	
-						int rowsAffected = st.executeUpdate();
+			int rowsAffected = st.executeUpdate();
 			
 			System.out.println("Done! Rows affected: " + rowsAffected);
 		}
