@@ -4,29 +4,29 @@ import java.io.Serializable;
 import java.util.Date;
 import java.util.Objects;
 
-public class Seller implements Serializable {
+public class Student implements Serializable {
 	
 	private static final long serialVersionUID = 1L;
 	
 	private Integer id;
 	private String name;
-	private String email;
 	private Date birthDate;
-	private Double baseSalary;
-	
-	private Department department;
-	
-	public Seller() {	
+	private String cpf;
+	private String phone;
+	private String period;
+		
+	public Student() {	
 	}
-
-	public Seller(Integer id, String name, String email, Date birthDate, Double baseSalary, Department department) {
+		
+	public Student(Integer id, String name, Date birthDate, String cpf, String phone, String period) {
 		this.id = id;
 		this.name = name;
-		this.email = email;
 		this.birthDate = birthDate;
-		this.baseSalary = baseSalary;
-		this.department = department;
+		this.cpf = cpf;
+		this.phone = phone;
+		this.period = period;
 	}
+	
 
 	public Integer getId() {
 		return id;
@@ -44,14 +44,6 @@ public class Seller implements Serializable {
 		this.name = name;
 	}
 
-	public String getEmail() {
-		return email;
-	}
-
-	public void setEmail(String email) {
-		this.email = email;
-	}
-
 	public Date getBirthDate() {
 		return birthDate;
 	}
@@ -60,20 +52,32 @@ public class Seller implements Serializable {
 		this.birthDate = birthDate;
 	}
 
-	public Double getBaseSalary() {
-		return baseSalary;
+	public String getCpf() {
+		return cpf;
 	}
 
-	public void setBaseSalary(Double baseSalary) {
-		this.baseSalary = baseSalary;
+	public void setCpf(String cpf) {
+		this.cpf = cpf;
 	}
 
-	public Department getDepartment() {
-		return department;
+	public String getPhone() {
+		return phone;
 	}
 
-	public void setDepartment(Department department) {
-		this.department = department;
+	public void setPhone(String phone) {
+		this.phone = phone;
+	}
+
+	public String getPeriod() {
+		return period;
+	}
+
+	public void setPeriod(String period) {
+		this.period = period;
+	}
+
+	public static long getSerialversionuid() {
+		return serialVersionUID;
 	}
 
 	@Override
@@ -89,16 +93,13 @@ public class Seller implements Serializable {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Seller other = (Seller) obj;
+		Student other = (Student) obj;
 		return Objects.equals(id, other.id);
 	}
-
+	
 	@Override
 	public String toString() {
-		return "Seller [id=" + id + ", name=" + name + ", email=" + email + ", birthDate=" + birthDate + ", baseSalary="
-				+ baseSalary + ", department=" + department + "]";
-	}	
+		return "Student [id=" + id + ", name=" + name + ", birthDate=" + birthDate + ", cpf=" + cpf + ", phone=" + phone
+				+ ", period=" + period + "]";
+	}		
 }
-	
-	
-

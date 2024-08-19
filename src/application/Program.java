@@ -1,32 +1,15 @@
 package application;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.util.Date;
 
-import db.DB;
-import db.DbIntegrityException;
+import model.entities.Teacher;
 
 public class Program {
 
 	public static void main(String[] args) {
+		Teacher obj = new Teacher(1, "Francisco", new Date(), "45612378945", "987456123", 12000.00);
+		System.out.println(obj);
 
-		Connection conn = null;
-		Statement st = null;
-		try {
-			conn = DB.getConnection();
-	
-			int rowsAffected = st.executeUpdate();
-			
-			System.out.println("Done! Rows affected: " + rowsAffected);
-		}
-		catch (SQLException e) {
-			throw new DbIntegrityException(e.getMessage());
-		} 
-		finally {
-			DB.closeStatement(st);
-			DB.closeConnection();
-		}
 	}
+
 }
